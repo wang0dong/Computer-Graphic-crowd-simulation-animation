@@ -1,3 +1,8 @@
+
+# Use the cost-minimization approach to create two animations of pedestrian evacuations.
+A cost function that encapsulates the collision-free movement of an object through a cluttered environment, the function calculates the distance between the current position of the animated object to the target position, also the function provides a penalty field for collision avoidance. It is zero at the specified distance R and goes infinity when the distance goes to zero. Plot the gradient "landscape" as well. 
+
+
 ## Experiment 1 Result
 ### Global dynamic gradient calculation
 ### Crowd simulation
@@ -29,48 +34,16 @@
 <img src="/gradient_animation2_rev3.gif" alt="images" style="zoom:100%;" />
 
 
-## Particle animation assignment 
-
-In this assignment, you will use the cost-minimization approach described in the lectures to create two animations of pedestrian evacuations. 
-
-### **Animation 1**: A group of people moving through an exit that is partially obstructed by an obstacle
-
-The basic scenario has a group of people inside a room or more simply on one side of a wall. The wall has a door through which the group will exit to the other side of the wall. The door is partially obstructed by an object. (Figures 1 and 2).
-
-<img src="figs/images.jpeg" alt="images" style="zoom:140%;" />
-
-**Figure 1**: A group meeting inside a room. 
-
-<img src="./figs/Unknown.jpeg" alt="Unknown" style="zoom:150%;" />
-
-**Figure 2**: The group evacuates the room while trying to avoid an obstacle that obstructs the exit. 
-
-An example of the scenario is shown in the video "Le dilemme de l’évacuation" (URL: https://youtu.be/kB1XuLFzHCI?si=o3ynE6TMoJOr-ByX&t=101) from time = 1.41 minutes to 1.51 minutes.
-
-### **Animation 2**: Merging crowds during an evacuation
-
-In this animation, you need to create a t-shape intersection of two corridors. There will be two groups of people starting from different locations. Both groups want to reach a single goal location. The groups will merge at the t-junction of the corridors (Figure 3) and continue moving together towards the goal position. An example of the situation is shown in this video (URL: https://youtu.be/x4o7Qi45jWU).
-
-<img src="figs/Unknown-1.jpeg" alt="Unknown-1" style="zoom:150%;" />
-
-**Figure 3**: The group evacuates from two different locations and merge at the junction between corridors. 
-
-### **What to submit:**
-
-- **A link to the videos of the animation: ** (e.g., Vimeo, YouTube, Google drive, Dropbox). 
-- **The source code of your program**: The actual source code or Jupyter notebook. 
-
-### **Further information**:
 
 - You must implement your solution to the problem using the cost-minimization approach presented in class and described in [Breen's](related_materials/cost_min.pdf) paper. You can modify or extend Breen's approach but you shouldn't use any other approach from online sources to implement the solutions of this assignment. 
 - The penalty cost for the walls can be created using a linear arrangement of overlapping obstacle-avoidance functions. 
-- To implement the animations, you will need to design the simulation scene and maybe adapt the obstacle-avoidance penalty functions to create the avoidance function for the walls. You will also need to create dynamic obstacle-avoidance functions that will be centered at each particle so they can avoid each other as they move. 
+- To implement the animations, you will need to design the simulation scene and adapt the obstacle-avoidance penalty functions to create the avoidance function for the walls. You will also need to create dynamic obstacle-avoidance functions that will be centered at each particle so they can avoid each other as they move. 
 
 
 
 #### Building the scene
 
-While the calculations are mostly done in 2-D, the animation that you will create should be in 3-D using Vedo, VPython, Open3D or similar library (or API). You can use spheres to represent the moving particles, boxes to represent the walls, and cylinders to represent  obstacles. Figure 4 shows an example of a basic scene for each animation. These are just examples, you can create your own scene component for each animation. 
+While the calculations are mostly done in 2-D, the animation that you will create should be in 3-D using Vedo, VPython, Open3D, or similar library (or API). You can use spheres to represent the moving particles, boxes to represent the walls, and cylinders to represent  obstacles. Figure 4 shows an example of a basic scene for each animation. These are just examples, you can create your own scene component for each animation. 
 
 ![floorPlan1](figs/floorPlan1.jpg)
 
